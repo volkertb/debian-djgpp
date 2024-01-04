@@ -10,3 +10,7 @@ such as GitHub Actions Workflows.
 ```shell
 docker build . -t djgpp-dev-container-v1
 ```
+
+## Other toolchains
+
+There is also an Open Watcom v2 variant: https://github.com/volkertb/debian-open-watcom
