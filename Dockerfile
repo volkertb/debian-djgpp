@@ -12,7 +12,7 @@ RUN echo "${DJGPP_TARBALL_SHA256}  /tmp/${DJGPP_TARBALL_NAME}" | sha256sum --che
 RUN apt -y install lbzip2
 RUN tar -xf /tmp/${DJGPP_TARBALL_NAME} -C /opt
 RUN rm /tmp/${DJGPP_TARBALL_NAME}
-RUN apt -y remove wget lbzip2
+RUN apt -y remove lbzip2
 
 # Make DJGPP available in environment, as instructed at https://github.com/andrewwutw/build-djgpp#using-djgpp-compiler
 ENV PATH=/opt/djgpp/i586-pc-msdosdjgpp/bin/:$PATH
