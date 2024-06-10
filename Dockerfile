@@ -1,4 +1,4 @@
-FROM debian:12.2-slim
+FROM debian:12.5-slim
 
 ARG DJGPP_RELEASE_VERSION=v3.4
 ARG DJGPP_TARBALL_NAME=djgpp-linux64-gcc1220.tar.bz2
@@ -36,3 +36,6 @@ RUN rm /tmp/hello_world_makefile
 
 # `ps` is required when using this image for a dev container
 RUN apt -y install procps
+
+# Clean up afterwards to reduce container image size
+RUN apt -y autoremove && apt -y clean && rm -rf /var/lib/apt/lists/*
